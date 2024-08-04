@@ -6,6 +6,7 @@ const courseRoute = require("./route/course.route")
 
 const port = 3001
 const app = express()
+app.use(express.json())
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :remote-user [:date[clf]]'))
 
 app.use("/user",userRoute)

@@ -13,9 +13,9 @@ userRoute.get("/",async(req,res)=>{
     }
 })
 
-userRoute.post("/",async(req,res)=>{
+userRoute.post("/",(req,res)=>{
        try {
-         const user = await new userModel(req.body)
+         const user = new userModel(req.body)
          user.save()
          res.json({"message":"Data posted","data":user})
        } catch (error) {
